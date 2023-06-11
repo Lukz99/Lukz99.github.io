@@ -1,3 +1,104 @@
+:root {
+    --color1: rgb(234, 223, 173);
+    --color2: rgb(227, 203, 99);
+    --color3: rgb(248, 219, 64);
+    --color4: rgb(164, 137, 19);   
+    --color5: rgb(110, 91, 0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: rgb(36, 34, 34);
+    background-color: rgb(5, 4, 4);  
+    color: rgb(235, 234, 221);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+nav {
+    transition: all 1s;
+    background-image: linear-gradient(90deg,  rgb(5, 4, 4) 0% , rgba(0,0,0,0)),url(src/background/banner00.jpg);
+    
+    background-position-x: 10em;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+}
+
+.logo {
+    display: flex;
+    background-color: rgb(5, 4, 4);
+    width: 20em;
+    height:20em;
+    align-items: center;
+    justify-content: center ;
+}
+
+#logo {
+    height: 15em;
+
+    filter: grayscale(90%);
+    transition: 0.5s;
+}
+
+#logo:hover {
+    filter:grayscale(0%);
+}
+
+.whatsapp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2em;
+    height: 2em;
+    margin: 0.2em;
+    position: relative;
+    transition: 0.4s;
+}
+  
+.whatsapp-container::before {
+    content: "";
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    width: 70%;
+    height: 70%;
+    background-color: rgb(255, 255, 255);
+    z-index: 0;
+    
+}
+
+.whatsapp-container::before:hover {
+
+    transform: scale(1.1) translateY(-0.5em);
+}
+  
+
+
+.social-media-icons {
+    margin: 0.2em;
+    filter: grayscale(90%);
+    
+    transition: filter 0.4s, transform 0.4s;
+}
+
+.social-media-icons:hover {
+    filter: grayscale(0%);    
+    transform: scale(1.09) translateY(-0.4em);
+}
+
+
+.redes {
+    display: flex;
+}
+
+footer {
+    background-color: rgb(206, 206, 206);
+    margin-top: auto;
+    padding: 0.4em 0 0.2em 0.2em;
 }
