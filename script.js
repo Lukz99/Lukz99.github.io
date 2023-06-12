@@ -1,3 +1,5 @@
+/* ***************** FOOTER ************************** */
+
 // El ícono de Whatsapp es un caso especial porque éste tiene fondo transparente, par lo que las transformaciones
 // al logo también deben aplicarse a su background blanco
 

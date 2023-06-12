@@ -17,13 +17,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    
 }
 
 nav {
     transition: all 1s;
-    background-image: linear-gradient(90deg,  rgb(5, 4, 4) 0% , rgba(0,0,0,0)),url(src/background/banner00.jpg);
-    
+    background-image: linear-gradient(90deg,  rgb(5, 4, 4) 10% , rgba(0,0,0,0) 40%),url(src/background/banner.jpg);
     background-position-x: 10em;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -41,7 +39,6 @@ nav {
 
 #logo {
     height: 15em;
-
     filter: grayscale(90%);
     transition: 0.5s;
 }
@@ -49,6 +46,121 @@ nav {
 #logo:hover {
     filter:grayscale(0%);
 }
+
+
+
+/* ******************************   SLIDER  ********************************** */
+
+input {
+    display: none;
+}
+
+.controles {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    left: 43%;
+    height: 1em;
+    width: 6em;
+    background-color: rgba(0, 0, 0,0.4);
+    align-items: center;
+    justify-content: center;
+    border-radius: 18px 18px 0 0;
+    padding: 0.4em;    
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: bottom;    
+    transition: transform 0.3s ease 0.2s, opacity 0.3s ease;
+}
+
+.controles > label {
+    height: 1em;
+    width: 1em;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 50%;    
+    margin: 0.2em
+}
+
+.controles > label:hover {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: 0.3s;
+}
+
+.container-slider {
+    width: 90%;
+    max-width: 900px;
+    margin: auto;
+
+    position: relative;
+    color: black;
+    overflow: hidden;
+    
+    box-shadow: 0px 0px 10px 2px #d0b03c;
+}
+
+.container-slider:hover .controles {
+   transform: scaleY(1);
+   opacity: 1;
+}
+
+
+.slider {
+    display: flex;
+    width: 400%;
+    height: 25em;
+    margin-left: -100%;
+}
+
+.slider__section {
+    width: 100%;    
+}
+
+.slider__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider__btn {
+    position: absolute;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: rgba(250,251,252,.7);
+    top: 50%;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: monospace;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.slider__btn:hover {
+    background-color: #fff;
+}
+
+.slider__btn-left {
+    left: 10px;
+}
+
+
+.slider__btn-right {
+    right: 10px;
+}
+
+
+/* ********** FOOTER ************** */
+
+
+footer {
+    background-color: rgba(252, 252, 252, 0.786);
+    margin-top: auto;
+    padding: 0.4em 0 0.2em 0.2em;
+}
+
 
 .whatsapp-container {
     display: flex;
@@ -70,15 +182,12 @@ nav {
     height: 70%;
     background-color: rgb(255, 255, 255);
     z-index: 0;
-    
 }
 
 .whatsapp-container::before:hover {
 
     transform: scale(1.1) translateY(-0.5em);
 }
-  
-
 
 .social-media-icons {
     margin: 0.2em;
@@ -92,13 +201,6 @@ nav {
     transform: scale(1.09) translateY(-0.4em);
 }
 
-
 .redes {
     display: flex;
-}
-
-footer {
-    background-color: rgb(206, 206, 206);
-    margin-top: auto;
-    padding: 0.4em 0 0.2em 0.2em;
 }
