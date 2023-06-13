@@ -1,13 +1,15 @@
-const catalogoHombres = document.querySelector("#hombres");
-const catalogoMujeres = document.querySelector("#mujeres");
-const catalogo = document.querySelector("#catalogo");
-const menuCatalogo = document.querySelector("#menu-desplegable-catalogo");
-
-
+const catalogoHombres   = document.querySelector("#hombres");
+const catalogoMujeres   = document.querySelector("#mujeres");
+const catalogo          = document.querySelector("#catalogo");
+const menuCatalogo      = document.querySelector("#menu-desplegable-catalogo");
+const mostrarCatalogoHombre = document.querySelector("#catalogo-hombres");
+const mostrarCatalogoMujer = document.querySelector("#catalogo-mujeres");
+var mostrarCatalogo     = "";
 var menuAbierto = false;
+var ultimoClicCatalogo = 0;
 
+/* *********** MENU CATALOGO DESPLEGABLE ************ */
 
-let ultimoClicCatalogo = 0;
 
 function desplegarMenuEspera(espera, menuAbierto) {
   const ahora = Date.now();
@@ -37,7 +39,26 @@ function desplegarMenu(menuAbierto) {
     return menuAbierto;
 }
 
-
 catalogo.addEventListener("click", () => {
     menuAbierto = desplegarMenuEspera(800, menuAbierto);
 });
+
+
+
+/* ******************* SELECTOR DE CATALOGO ******************* */
+
+
+function setCatalog(genero) {
+    console.log("genero:", genero);    
+    if (genero == "hombres") {
+        console.log("click hombres")
+      mostrarCatalogoHombre.style.left = "50%";
+      mostrarCatalogoMujer.style.left = "0%";
+    } else if (genero == "mujeres") {
+        console.log("click mujerse")
+        mostrarCatalogoHombre.style.left = "0%";
+        mostrarCatalogoMujer.style.left = "50%";
+        console.log("click mujerse")
+    }
+    console.log("Catalog Type:", catalogType);
+  }

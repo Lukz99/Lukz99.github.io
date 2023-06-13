@@ -14,7 +14,8 @@
 body {
     background-color: rgb(5, 4, 4);  
     color: rgb(235, 234, 221);
-    min-height: 110vh;
+    min-height: 120vh;
+    
     display: flex;
     flex-direction: column;
     font-family: 'Cinzel Decorative', cursive;
@@ -281,11 +282,50 @@ input {
     right: 0.35em;
 }
 
+
+/* ********** CATALOGO ************** */
+
+.container-catalogo {
+    display: flex;
+   
+}
+
+.card {
+    text-align: center;
+    display: flex;
+}
+
+.imagen-catalogo {
+    aspect-ratio: 3/2;
+    height: 20em;
+    
+}
+
+.precio-catalogo {
+    position: absolute;
+    background-color: rgba(87, 84, 84, 0.601);
+    width: 8em;
+    color: rgb(216, 216, 211);
+    height: 1.7em;
+    border-radius: 0 0 10px 10px;
+    left: 18.2em;
+    top: 29.7em !important;
+    opacity: 0;   
+    transition: 0.4s;
+}
+
+.card:hover  .precio-catalogo {
+    opacity: 1;   
+}
+  
+
+
+
 /* ********** FOOTER ************** */
 
 footer {
     background-color: rgba(252, 252, 252, 0.786);
-    margin-top: auto;
+    margin-bottom: 0;
     padding: 0.4em 0 0.2em 0.2em;
 }
 
