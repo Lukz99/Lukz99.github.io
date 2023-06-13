@@ -1,6 +1,6 @@
 /* ***************** MENU DESPLEGABLE ************************** */
 
-const botonMenu       = document.querySelector("#botonMenu");
+const botonMenu       = document.querySelector("#boton-menu");
 const menuDesplegable = document.querySelector("#menu-desplegable");
 
 var menuEstaAbierto = false;
@@ -12,7 +12,7 @@ botonMenu.addEventListener("click", () => {
 function usarMenu(menuEstaAbierto) {
     console.log(menuEstaAbierto);
     if (menuEstaAbierto) {
-        menuDesplegable.style.left = "-40em";
+        menuDesplegable.style.left = "-80em";
         menuDesplegable.style.opacity = "0";
     } else {
         menuDesplegable.style.left = "0em";

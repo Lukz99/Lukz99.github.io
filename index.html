@@ -24,16 +24,21 @@
     </header>
     
     <div id="menu">
-        <iconify-icon id="botonMenu" icon="pepicons-print:menu" width="32" height="32"></iconify-icon>
+        <iconify-icon id="boton-menu" icon="pepicons-print:menu" width="32" height="32"></iconify-icon>
     </div>
     
-        <div id="menu-desplegable">
-            <a href="catalogo.html"><h1 class="opciones">INiCiO</h1></a>
-            <a href="catalogo.html"><h1 class="opciones">CATálOGO</h1></a>
-            
-                <h1 class="opciones">NoSOTRoS</h1>
-        </div>
-    
+    <div id="menu-desplegable">
+        <a href="index.html">   <h1 class="opciones" id="inicio">  INiCiO     </h1></a>
+        <h1 class="opciones" id="catalogo">CATálOGO </h1>
+        
+            <h1 class="opciones">NoSOTRoS</h1>
+    </div>
+
+    <div id="menu-desplegable-catalogo">
+        <div class="opcionesCatalogo" id="hombres"><h2>HOMBRES</h2></div>
+        <div class="opcionesCatalogo" id="mujeres"><h2>MuJeRES</h2></div>
+    </div>
+
     <input type="radio" name="botones" id="btn1">
     <input type="radio" name="botones" id="btn2">
     <input type="radio" name="botones" id="btn3">
@@ -92,8 +97,10 @@
            
         </div>
     </footer>
+   
     <script src="script.js"></script>
     <script src="slider.js"></script>
+    <script src="catalogo.js"></script>
     <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 </body>
 </html>
