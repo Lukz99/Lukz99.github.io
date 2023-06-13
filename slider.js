@@ -8,18 +8,17 @@ var sliderSectionLast   = sliderSection[sliderSection.length - 1];
 var imagenActual        = 1;
 slider.insertAdjacentElement("afterbegin", sliderSectionLast);
 
-
-function proximaImagen() {
+function proximaImagen(velocidad) {
     var sliderSection       = document.querySelectorAll(".slider__section");
     var sliderSectionFirst  = sliderSection[0];
     slider.style.marginLeft = "-200%";
-    slider.style.transition = "all 1s";
+    slider.style.transition = `all ${velocidad}ms`;
 
     setTimeout(()=>{
         slider.style.transition = "none"
         slider.style.marginLeft = "-100%";
         slider.insertAdjacentElement("beforeend", sliderSectionFirst);
-    }, 1000);
+    }, velocidad);
 
     switch (imagenActual) {
         case 1:
@@ -38,17 +37,17 @@ function proximaImagen() {
     return imagenActual;
 }
 
-function anteriorImagen() {
+function anteriorImagen(velocidad) {
     var sliderSection       = document.querySelectorAll(".slider__section");
     var sliderSectionLast   = sliderSection[sliderSection.length - 1];
     slider.style.marginLeft = "0%";
-    slider.style.transition = "all 1s";
+    slider.style.transition = `all ${velocidad}ms`;
 
     setTimeout(()=>{
         slider.style.transition = "none";
         slider.style.marginLeft = "-100%";
         slider.insertAdjacentElement("afterbegin", sliderSectionLast);
-    }, 1000);
+    }, velocidad);
 
     switch (imagenActual) {
         case 1:
@@ -64,86 +63,144 @@ function anteriorImagen() {
             imagenActual--;
             break;
     }
-    return imagenActual;
 }
 
-btnRight.addEventListener("click", proximaImagenEspera);
-
-
-btnLeft.addEventListener("click", anteriorImagenEspera);
+btnRight.addEventListener("click", () => {
+    proximaImagenEspera(1000, 1000);
+});
+btnLeft.addEventListener("click", () => {
+    anteriorImagenEspera(1000, 1000);
+});
 
 /* ********************* TIEMPO DE ESPERA *************** */
 
 let ultimoClic = 0;
 
-function proximaImagenEspera() {
+function proximaImagenEspera(velocidad, espera) {
   const ahora = Date.now();
-  if (ahora - ultimoClic > 1000) {
-    proximaImagen();
+  if (ahora - ultimoClic > espera) {
+    proximaImagen(velocidad);
     ultimoClic = ahora;
   }   
 }
 
-function anteriorImagenEspera() {
+function anteriorImagenEspera(velocidad, espera) {
     const ahora = Date.now();
-    if (ahora - ultimoClic > 1000) {
-      anteriorImagen();
+    if (ahora - ultimoClic > espera) {
+      anteriorImagen(velocidad);
       ultimoClic = ahora;
-    }     
+    }
 }
 
 /* ************************** AUTO SLIDER ************************ */
 
 var imagen = document.querySelector(".container-slider");
-var intervalID = setInterval(proximaImagen, 3000);
+var intervalID = setInterval( ()=> {
+    proximaImagenEspera(2000, 1000)
+}, 5000);
+  
 
 imagen.addEventListener('mouseover', () => {
     clearInterval(intervalID);
 });
 
 imagen.addEventListener('mouseout', () => {
-    intervalID = setInterval(proximaImagen, 3000);
+    intervalID = setInterval( ()=> {
+        proximaImagenEspera(2000, 1000)
+    }, 5000);
 });
 
-
-
-
 /* ************************** SELECTOR DE IMAGEN ************************ */
-
 
 const btn1 = document.querySelector("#btn1");
 const btn2 = document.querySelector("#btn2");
 const btn3 = document.querySelector("#btn3");
 const btn4 = document.querySelector("#btn4");
 
-
 btn1.addEventListener("click", () => {
-    
+    if (imagenActual == 1) {
+        // pass
+    }
+    else if (imagenActual == 2) {
+        btnLeft.click();
+    } else if (imagenActual == 3) {
+       
+        proximaImagenEspera(300, 1000);
+
+        setTimeout(()=>{
+            proximaImagenEspera(300, 300);
+        }, 350);
+    } else {
+        btnRight.click();
+    }
 });
 
 btn2.addEventListener("click", () => {
-    activarSlider(2)
+    if (imagenActual == 1) {
+        btnRight.click()
+    }
+    else if (imagenActual == 2) {
+        // pass
+    } else if (imagenActual == 3) {
+        btnLeft.click();
+    } else {
+        proximaImagenEspera(300, 1000);
+        setTimeout(()=>{
+            proximaImagenEspera(300, 300);
+        }, 350);
+    }
 });
 
 btn3.addEventListener("click", () => {
-    activarSlider(3)
+    if (imagenActual == 1) {
+        proximaImagenEspera(300, 1000);
+        setTimeout(()=>{
+            proximaImagenEspera(300, 300);
+        }, 350);
+    }
+    else if (imagenActual == 2) {
+        btnRight.click();
+    } else if (imagenActual == 3) {
+        // pass
+    } else {
+       btnLeft.click();
+    }
 });
 
 btn4.addEventListener("click", () => {
-    activarSlider(4)
+    if (imagenActual == 1) {
+        btnLeft.click();
+    }
+    else if (imagenActual == 2) {
+        proximaImagenEspera(300, 1000);
+        setTimeout(()=>{
+            proximaImagenEspera(300, 300);
+        }, 350);
+    } else if (imagenActual == 3) {
+        btnRight.click();
+    } else {
+        // pass
+    }
 });
 
-function activarSlider(imagenActual) {
-    setInterval(cambiarImagen(imagenActual), 2000);
-}
+/* ************************** AGRANDAR FLECHAS 2DA VEZ ************************ */
 
-function cambiarImagen(imagenActual) {
-    switch (imagenActual){
-        case 1:
-            btn2.addEventListener("click");
+const botonSliderIzquierda = document.querySelector(".slider__btn-left");
+const botonSliderDerecha   = document.querySelector(".slider__btn-right");
 
-    }
-}
+botonSliderIzquierda.addEventListener('mouseover', () => {
+    botonSliderIzquierda.style.transform ="scale(1.25)";
+});
 
-setInterval(siguienteImagen, 2000);
+botonSliderIzquierda.addEventListener('mouseout', () => {
+    botonSliderIzquierda.style.transform = "";
+});
 
+botonSliderDerecha.addEventListener('mouseover', () => {
+    botonSliderDerecha.style.transform ="scale(1.25)";
+});
+
+
+botonSliderDerecha.addEventListener('mouseout', () =>  {
+    botonSliderDerecha.style.transform = "";
+});

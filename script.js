@@ -1,3 +1,30 @@
+/* ***************** MENU DESPLEGABLE ************************** */
+
+const botonMenu       = document.querySelector("#botonMenu");
+const menuDesplegable = document.querySelector("#menu-desplegable");
+
+var menuEstaAbierto = false;
+
+botonMenu.addEventListener("click", () => {
+    menuEstaAbierto = usarMenu(menuEstaAbierto)
+});
+
+function usarMenu(menuEstaAbierto) {
+    console.log(menuEstaAbierto);
+    if (menuEstaAbierto) {
+        menuDesplegable.style.left = "-40em";
+        menuDesplegable.style.opacity = "0";
+    } else {
+        menuDesplegable.style.left = "0em";
+        menuDesplegable.style.opacity = "1";
+    }
+    menuEstaAbierto = !menuEstaAbierto;
+    console.log(menuEstaAbierto);
+    return menuEstaAbierto;
+}
+
+
+
 /* ***************** FOOTER ************************** */
 
 // El ícono de Whatsapp es un caso especial porque éste tiene fondo transparente, par lo que las transformaciones

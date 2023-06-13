@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="src/logos/icon.png"/>
+    <link rel="stylesheet"  href="style.css">
+    <link rel="icon"        href="src/logos/icon.png"/>
+    <link rel="preconnect"  href="https://fonts.googleapis.com">
+    <link rel="preconnect"  href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"  href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" >
 
     <title>Document</title>
 </head>
 <body>
     <header>
         <nav>
-            
             <div class="logo">
                 <img id="logo" src="src/logos/logo.png" alt="Logo Emma Bouchard">
             </div>
-            
         </nav>
     </header>
     
-    Hola
-
-    BLA BLA
-    <div class="hola">ah
-
+    <div id="menu">
+        <iconify-icon id="botonMenu" icon="pepicons-print:menu" width="32" height="32"></iconify-icon>
     </div>
-
+    
+        <div id="menu-desplegable">
+            <a href="catalogo.html"><h1 class="opciones">INiCiO</h1></a>
+            <a href="catalogo.html"><h1 class="opciones">CATálOGO</h1></a>
+            
+                <h1 class="opciones">NoSOTRoS</h1>
+        </div>
     
     <input type="radio" name="botones" id="btn1">
     <input type="radio" name="botones" id="btn2">
     <input type="radio" name="botones" id="btn3">
     <input type="radio" name="botones" id="btn4">
-   
-
 
     <div class="container-slider">
         <div id="slider" class="slider">
@@ -55,8 +58,8 @@
         
 
 
-        <div class="slider__btn slider__btn-right">&#62;</div>
-        <div class="slider__btn slider__btn-left">&#60;</div>
+        <div class="slider__btn slider__btn-right"><div class="text">&#62;</div></div>
+        <div class="slider__btn slider__btn-left"><div class="text">&#60;</div></div>
         
         <div class="controles">
             <label for="btn1"></label>
