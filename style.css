@@ -30,6 +30,12 @@ nav {
     
 }
 
+#hero {
+   height: 90vh;
+}
+
+
+
 .logo {
     display: flex;
     background-color: rgb(5, 4, 4);
@@ -285,33 +291,38 @@ input {
 
 /* ********** CATALOGO ************** */
 
-.container-catalogo {
-    display: flex;
-   
-}
-
 .card {
-    text-align: center;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 30em;
+    height: 20em;
 }
 
 .imagen-catalogo {
     aspect-ratio: 3/2;
     height: 20em;
-    
+    width: 30em;
+}
+
+#catalogo-hombres, #catalogo-mujeres {
+    margin: 2em 0;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;    
+    gap: 60px 40px;
 }
 
 .precio-catalogo {
-    position: absolute;
-    background-color: rgba(87, 84, 84, 0.601);
-    width: 8em;
+    position: relative;
+    background-color: rgba(53, 50, 50, 0.601);
     color: rgb(216, 216, 211);
-    height: 1.7em;
     border-radius: 0 0 10px 10px;
-    left: 18.2em;
-    top: 29.7em !important;
+    left: -220%;
     opacity: 0;   
     transition: 0.4s;
+    width: 8em;
+    height: 1.7em;
 }
 
 .card:hover  .precio-catalogo {
