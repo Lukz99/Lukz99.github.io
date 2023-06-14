@@ -31,15 +31,15 @@ nav {
 }
 
 #hero-index {
-    height: calc(46vh + 5px);
+    height: 50vh;
 }
 
 #hero-hombres {
-   height: 120vh;
+   height: 90vh;
 }
 
 #hero-mujeres {
-    height: 46vh;
+    height: 50vh;
 }
 
 .logo {
