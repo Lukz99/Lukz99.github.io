@@ -296,6 +296,8 @@ input {
     grid-template-columns: 1fr 1fr;
     width: 30em;
     height: 20em;
+    transition: 0.3s;
+    box-shadow: 0 0 6px 2px rgb(238, 229, 95);
 }
 
 .imagen-catalogo {
@@ -325,12 +327,13 @@ input {
     height: 1.7em;
 }
 
-.card:hover  .precio-catalogo {
+.card:hover .precio-catalogo {
     opacity: 1;   
 }
-  
 
-
+.card:hover {
+    transform: translateY(-2em);
+}
 
 /* ********** FOOTER ************** */
 
