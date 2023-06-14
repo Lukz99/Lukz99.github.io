@@ -14,7 +14,7 @@
 body {
     background-color: rgb(5, 4, 4);  
     color: rgb(235, 234, 221);
-    min-height: 120vh;
+    min-height: 45vh;
     
     display: flex;
     flex-direction: column;
@@ -30,11 +30,17 @@ nav {
     
 }
 
-#hero {
-   height: 90vh;
+#hero-index {
+    height: calc(46vh + 5px);
 }
 
+#hero-hombres {
+   height: 120vh;
+}
 
+#hero-mujeres {
+    height: 46vh;
+}
 
 .logo {
     display: flex;
@@ -84,7 +90,7 @@ nav {
     left: -80em;
        
     transition: opacity 0.5s, left 1s;
-    opacity: 0;
+    opacity: 1;
 }
 
 
@@ -220,7 +226,7 @@ input {
 .container-slider {
     width: 90%;
     max-width: 900px;
-    margin: auto;
+    margin: 1em auto;
     position: relative;
     color: black;
     overflow: hidden;
@@ -387,7 +393,7 @@ footer {
 /* ******************************   RESPONSIVE   ********************************** */
 
 
-@media only screen and (max-width: 1050px){
+@media only screen and (max-width: 1050px) {
     body {
         font-size: 14px;
     }
@@ -403,5 +409,78 @@ footer {
     }
     #menu-desplegable {
         top: -4em
+    }
+    #hero-index {
+        height: 54.5vh;
+    }
+}
+
+
+@media only screen and (max-width: 894px) {
+    .card {
+        height: 200px;
+        width: 300px; 
+    }
+    .imagen-catalogo {
+        height: 200px;
+        width: 300px; 
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .container-slider {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    body {
+        font-size: 12px;
+    }
+    #menu {
+        width: 2.5em;
+    }
+    #hero-index {
+        height: calc(60vh + 5px);
+    }
+    .container-slider {
+        margin: 6em auto;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    body {
+        font-size: 10px;
+    }
+    #menu {
+        width: 2.7em;
+    }
+    #hero-index {
+        height: calc(66vh + 5px);
+    }
+}
+
+
+@media only screen and (max-width: 460px) {
+    body {
+        font-size: 10px;
+    }
+    #menu-desplegable {
+        flex-direction: column;
+        margin: 0 0 0 12.5em;
+    }
+    
+    #menu {
+        margin: 0.5em 0;
+        width: 3em;
+        box-shadow: 1px 2px 2px 1px white;
+    }
+
+    #menu:hover {
+        box-shadow: 1px 2px 2px 1px var(--color3);
+    }
+
+    #hero-index {
+        height: calc(51vh + 6px);
     }
 }
