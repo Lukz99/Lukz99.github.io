@@ -172,6 +172,11 @@ h2:hover {
     background-color: rgba(232, 235, 169, 0.655);
     transition: top 1s;
 }
+
+#hombres h2 {
+    left: 1.5em;
+}
+
 #mujeres {
     z-index: 0;
     
@@ -308,8 +313,9 @@ input {
 
 .imagen-catalogo {
     aspect-ratio: 3/2;
-    height: 20em;
     width: 30em;
+    height: 20em;
+    
 }
 
 #catalogo-hombres, #catalogo-mujeres {
